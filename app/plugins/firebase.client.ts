@@ -2,11 +2,11 @@ import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from 'firebase/messaging';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDElGKw_7Wj6sF3u85hiN0o3v2IYARnnB4",
-    authDomain: "jazz-notifications.firebaseapp.com",
-    projectId: "jazz-notifications",
-    messagingSenderId: "541683508768",
-    appId: "1:541683508768:web:aacc4fb101e165fe4afe45",
+    apiKey: "AIzaSyCA4CrLe4OCNZhHXecfQXAulAElz5KPmT4",
+    authDomain: "almared-15b8a.firebaseapp.com",
+    projectId: "almared-15b8a",
+    messagingSenderId: "309197997293",
+    appId: "1:309197997293:web:ae94a2bbf6a51af9b778e4",
 };
 
 const app = initializeApp(firebaseConfig);

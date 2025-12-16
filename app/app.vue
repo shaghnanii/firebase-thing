@@ -29,7 +29,7 @@ onMounted(async () => {
 
     // ✅ Get Firebase token
     const fcmToken = await $firebase.getToken($firebase.messaging, {
-      vapidKey: 'BIS5PBxTH-eOUcnGIQPrfALiKEPD7yxga5-iU_QUCqdvi0tD39mZElxiA5TqAugVFOIYbZVX-Zo0y_-FFWv3lE0',
+      vapidKey: 'BBdf1oeD9qdAhVg_dkZKrPiS6zv_-B2jKF3TPvSEFw-Gh0DqMb2S57Ldy5_JgNSVN0ehj8CIMKlThaWd7Wrbkr8',
       serviceWorkerRegistration: registration,
     });
 
@@ -56,7 +56,7 @@ onMounted(async () => {
 
 <template>
   <div class="p-4 max-w-lg mx-auto">
-    <h1 class="text-2xl font-bold mb-4">Firebase Notifications Test</h1>
+    <h1 class="text-2xl font-bold mb-4">🔔🔔🔔 Firebase Notifications 🔔🔔🔔</h1>
 
     <div v-if="token" class="space-y-2">
       <input
