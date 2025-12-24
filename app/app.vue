@@ -23,18 +23,18 @@ onMounted(async () => {
 
     // ✅ Register service worker at correct path
     const registration = await navigator.serviceWorker.register(
-      `${import.meta.env.BASE_URL}firebase-messaging-sw.js`
+      `firebase-messaging-sw.js`
     );
     console.log('✅ Service Worker registered:', registration.scope);
 
-    // ✅ Get Firebase token
+    // // ✅ Get Firebase token
     const fcmToken = await $firebase.getToken($firebase.messaging, {
       vapidKey: 'BBdf1oeD9qdAhVg_dkZKrPiS6zv_-B2jKF3TPvSEFw-Gh0DqMb2S57Ldy5_JgNSVN0ehj8CIMKlThaWd7Wrbkr8',
       serviceWorkerRegistration: registration,
     });
 
     token.value = fcmToken;
-    console.log('✅ Firebase Device Token:', fcmToken);
+    // console.log('✅ Firebase Device Token:', fcmToken);
 
     // ✅ Optional: send to backend
     // await $fetch('/api/update-device-token', {
@@ -43,10 +43,10 @@ onMounted(async () => {
     // });
 
     // ✅ Foreground message listener
-    $firebase.onMessage($firebase.messaging, (payload) => {
-      console.log('📩 Foreground message received:', payload);
-      alert(`${payload.notification.title}: ${payload.notification.body}`);
-    });
+    // $firebase.onMessage($firebase.messaging, (payload) => {
+    //   console.log('📩 Foreground message received:', payload);
+    //   alert(`${payload.notification.title}: ${payload.notification.body}`);
+    // });
 
   } catch (error) {
     console.error('Error getting token', error);

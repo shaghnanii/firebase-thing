@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   ssr: false,
   devtools: { enabled: true },
-  plugins: ['~/plugins/firebase.client.ts'],
+  // plugins: ['~/plugins/firebase.client.ts'],
   modules: ['@nuxt/image', '@nuxt/scripts', '@nuxt/ui'],
     nitro: {
     preset: 'static'

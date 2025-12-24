@@ -4,21 +4,27 @@ importScripts('https://www.gstatic.com/firebasejs/11.0.1/firebase-messaging-comp
 
 // Initialize Firebase
 firebase.initializeApp({
-    apiKey: "AIzaSyDElGKw_7Wj6sF3u85hiN0o3v2IYARnnB4",
-    authDomain: "jazz-notifications.firebaseapp.com",
-    projectId: "jazz-notifications",
-    messagingSenderId: "541683508768",
-    appId: "1:541683508768:web:aacc4fb101e165fe4afe45"
+    apiKey: "AIzaSyCA4CrLe4OCNZhHXecfQXAulAElz5KPmT4",
+    authDomain: "almared-15b8a.firebaseapp.com",
+    projectId: "almared-15b8a",
+    messagingSenderId: "309197997293",
+    appId: "1:309197997293:web:ae94a2bbf6a51af9b778e4"
 });
 
 const messaging = firebase.messaging();
 // Background message handler
 messaging.onBackgroundMessage((payload) => {
-  console.log('[firebase-messaging-sw.js] Received background message', payload);
-  const notificationTitle = payload.notification.title;
-  const notificationOptions = {
-    body: payload.notification.body,
+  console.log('##### Received background message ******* ', payload);
+  const title = payload.data.title == null || payload.data.title == "" ? "" : payload.data.title;
+  const body = payload.data.body;
+  const subtitle = payload.data.subtitle || "";
+  
+  console.log("##### BODY: ", payload.data)
+  console.log("##### TITLE: ", title)
+  console.log("##### BODY: ", body)
+  const nOptions = {
+    body: subtitle ? subtitle + "\n" + body : body,
     icon: '/icons/icon-192x192.png',
   };
-  self.registration.showNotification(notificationTitle, notificationOptions);
+  self.registration.showNotification(title, nOptions);
 });
